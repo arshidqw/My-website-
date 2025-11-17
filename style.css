@@ -4,14 +4,21 @@ body {
     background-position: center;
 }
 
-}
-
 /* Title */
 h1 {
-    color: blueviolet;
-    margin: 10px;
-    font-size: 2.5em;
+    color: #8E2DE2;               /* beautiful purple gradient tone */
+    background: linear-gradient(45deg, #8E2DE2, #4A00E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;           /* center on all devices */
+    font-size: 2.8em;             /* big title */
+    font-weight: 800;             /* bold + premium look */
+    letter-spacing: 2px;          /* spacing between letters */
+    margin: 20px 10px;
+    font-family: 'Poppins', sans-serif; /* stylish modern font */
 }
+
 
 /* Sub title */
 h2 {
