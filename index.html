@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <title>MY WEBSITE</title>
+
+    <!-- Correct path -->
     <link rel="stylesheet" href="code.dev/style.css">
 </head>
 
 <body>
 
     <h1>Welcome to my website</h1>
-    
-    <!-- Load JS at the END -->
+
     <button onclick="changeMessage()">Click Me</button>
     <h2 id="message">You can click the button</h2>
 
     <p>Here we provide different courses for you</p>
 
-    <!-- Embedded YouTube Video -->
     <iframe width="560" height="315"
         src="https://www.youtube.com/embed/0CdaKo-6pPQ"
-        title="YouTube video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
 
     <br><br>
 
-    <!-- Clickable Link -->
     <a href="https://youtu.be/0CdaKo-6pPQ?si=ajtgAhxcRc0hdG4g" target="_blank">
         Watch this video
     </a>
 
-</body>
-</html>
-
-
-    <!-- Sign Up Section -->
+    <!-- SIGN UP SECTION INSIDE BODY (CORRECT) -->
     <section id="signup">
         <h3>Sign Up</h3>
 
         <div class="form-container">
 
             <form id="contactForm">
+
                 <label for="name">Full Name</label><br>
                 <input type="text" id="name" name="name"><br><br>
 
@@ -66,7 +59,6 @@
         </div>
     </section>
 
-    <!-- Load JavaScript here -->
     <script src="script.js"></script>
 
 </body>
