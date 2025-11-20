@@ -1,11 +1,10 @@
-// Change message when clicking button
+// Button message change
 function changeMessage() {
     document.getElementById("message").innerText =
         "Welcome to our website and thanks for visiting!";
 }
 
-
-// Handle form submission
+// SIGNUP form validation
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -14,11 +13,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     const password = document.getElementById("password").value.trim();
     const confirm = document.getElementById("confirm").value.trim();
 
-    const thankYouMessage = document.getElementById("thankYouMessage");
+    const thankYou = document.getElementById("thankYouMessage");
 
-    // Validate required fields
     if (!name || !email || !password || !confirm) {
-        alert("Please complete all fields before submitting.");
+        alert("Please complete all fields.");
         return;
     }
 
@@ -27,17 +25,26 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         return;
     }
 
-    // Show success message
-    thankYouMessage.style.display = "block";
+    thankYou.style.display = "block";
 
-    // Clear form
     this.reset();
 
-    // Hide after 3 seconds
     setTimeout(() => {
-        thankYouMessage.style.display = "none";
+        thankYou.style.display = "none";
     }, 3000);
 });
-        
 
-    
+// CONTACT form
+document.getElementById("contactForm2").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const success = document.getElementById("successMessage");
+
+    success.style.display = "block";
+
+    this.reset();
+
+    setTimeout(() => {
+        success.style.display = "none";
+    }, 3000);
+});
