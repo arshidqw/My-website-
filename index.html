@@ -1,137 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY WEBSITE</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="
-    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;">
-  <!-- Your content here -->
-    <h1><em>Welcome to my website</em></h1>
+<body>
 
-    <button onclick="changeMessage()">Click Me</button>
-    <h2 id="message">You can click the button</h2>
+<h1>Welcome to my website</h1>
+<h2 id="message">You can click the button</h2>
+<button onclick="changeMessage()">Click Me</button>
 
-    <p><i>Here we provide different courses for you</i></p>
+<p>Here we provide different courses for you:</p>
 
-    <!-- <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/0CdaKo-6pPQ"
-        allowfullscreen>
-    </iframe> -->
+<!-- Responsive Video Box -->
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLhrnHPBcOqMlMqbOYAJ5JS3RQbNXFZjlx"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+</div>
 
-    <br><br>
+<br><br>
 
-    <a href="https://youtu.be/0CdaKo-6pPQ?si=ajtgAhxcRc0hdG4g" target="_blank">
-        Watch this video
-        
-        <br><br>
-        
-      <a href="https://www.geeksforgeeks.org/machine-learning/machine-learning/" style="padding:10px 15px; background:green; color:black; text-decoration:none; border-radius:5px;">
-  Machine Learning – GeeksforGeeks
-          
-          <br><br>
-          
-          <a href="https://www.geeksforgeeks.org/system-design/system-design-tutorial/" target="_blank">
-              click here
-          </a>
+<!-- Playlist link -->
+<a href="https://youtube.com/playlist?list=PLhrnHPBcOqMlMqbOYAJ5JS3RQbNXFZjlx"
+   target="_blank">
+   Open YouTube Playlist
 </a>
-    </a>
-    
-    <br><br>
-    
-    <!-- Responsive YouTube playlist embed -->
-    <!--<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
-  <iframe
-    src="https://www.youtube.com/embed/videoseries?list=PLhrnHPBcOqMn7BmwrpptuKcfWN-SAT-no"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    title="YouTube playlist">
-  </iframe>
-</div>-->
-    
-    <a href="https://youtube.com/playlist?list=PLhrnHPBcOqMn7BmwrpptuKcfWN-SAT-no"
-   target="_blank" rel="noopener noreferrer"
-   aria-label="Open YouTube playlist">
-  Open playlist from here
-</a>
-    
-    <br><br>
-    
-    <!-- <iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/videoseries?list=PLhrnHPBcOqMlMqbOYAJ5JS3RQbNXFZjlx&autoplay=1&loop=1"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe> -->
 
-    <!-- SIGN UP SECTION INSIDE BODY (CORRECT) -->
-    <section id="signup">
-        <h3>Sign Up</h3>
+<br><br>
 
-        <div class="form-container">
+<!-- SIGN UP SECTION -->
+<section id="signup">
+    <h3>Sign Up</h3>
 
-            <form id="contactForm">
+    <div class="form-container">
+        <form id="contactForm">
+            <label>Full Name</label>
+            <input type="text" id="name"><br>
 
-                <label for="name">Full Name</label><br>
-                <input type="text" id="name" name="name"><br><br>
+            <label>Email Address</label>
+            <input type="email" id="email"><br>
 
-                <label for="email">Email Address</label><br>
-                <input type="email" id="email" name="email"><br><br>
+            <label>Password</label>
+            <input type="password" id="password"><br>
 
-                <label for="password">Password</label><br>
-                <input type="password" id="password" name="password"><br><br>
+            <label>Confirm Password</label>
+            <input type="password" id="confirm"><br>
 
-                <label for="confirm">Confirm Password</label><br>
-                <input type="password" id="confirm" name="confirm"><br><br>
+            <button type="submit">Create Account</button>
 
-                <button type="submit">Create Account</button>
-            </form>
-
-            <p id="thankYouMessage" style="display:none; color:green;">
+            <p id="thankYouMessage" class="hidden">
                 Thank you for signing up!
             </p>
-           </div>
-        
-    </section>
-    
-    <br><br>
-    
+        </form>
+    </div>
+</section>
+
+<br><br>
+
 <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <div class="container">
-            <h5>Contact Us</h5>
+<section class="contact-section">
+    <h5>Contact Us</h5>
 
-            <form id="contactForm2">
+    <div class="container">
+        <form id="contactForm2">
 
-                <label for="contactName">Full Name</label>
-                <input type="text" id="contactName" required>
+            <label>Full Name</label>
+            <input type="text" id="contactName" required>
 
-                <label for="contactEmail">Email Address</label>
-                <input type="email" id="contactEmail" required>
+            <label>Email Address</label>
+            <input type="email" id="contactEmail" required>
 
-                <label for="contactMessage">Message</label>
-                <textarea id="contactMessage" rows="5" required></textarea>
+            <label>Message</label>
+            <textarea id="contactMessage" rows="5" required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
+            <button type="submit">Send Message</button>
 
             <p id="successMessage" class="hidden">
                 Your message has been sent!
             </p>
-        </div>
-    </section>
+        </form>
+    </div>
+</section>
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-                                                         </html>
+</html>
