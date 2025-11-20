@@ -4,4 +4,167 @@
 body {
     margin: 0;
     padding: 0;
-    ove
+    overflow-x: hidden;
+    background: #eef4ff;  /* Soft study blue */
+}
+
+/* floating emojis/icons */
+.study-bg span {
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.25;
+    animation: floatEdu 12s linear infinite;
+}
+
+/* Random positions + speed */
+.study-bg span:nth-child(1) { left: 10%; animation-duration: 13s; }
+.study-bg span:nth-child(2) { left: 30%; animation-duration: 10s; }
+.study-bg span:nth-child(3) { left: 50%; animation-duration: 15s; }
+.study-bg span:nth-child(4) { left: 70%; animation-duration: 11s; }
+.study-bg span:nth-child(5) { left: 85%; animation-duration: 14s; }
+.study-bg span:nth-child(6) { left: 40%; animation-duration: 16s; }
+
+/* animation effect */
+@keyframes floatEdu {
+    0% { transform: translateY(110vh) rotate(0deg); }
+    100% { transform: translateY(-110vh) rotate(360deg); }
+}
+
+/* Title */
+h1 {
+    color: #8E2DE2;               /* beautiful purple gradient tone */
+    background: linear-gradient(45deg, #8E2DE2, #4A00E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;           /* center on all devices */
+    font-size: 2.8em;             /* big title */
+    font-weight: 800;             /* bold + premium look */
+    letter-spacing: 2px;          /* spacing between letters */
+    margin: 20px 10px;
+    font-family: 'Poppins', sans-serif; /* stylish modern font */
+}
+
+/* Sub title */
+h2 {
+    color: darkblue;
+}
+
+/* Normal Text */
+p {
+    color: blue;
+    margin: 20px;
+}
+
+/* Section */
+section {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #4a90e2;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Form Inputs */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-container input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Submit Button */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #357ABD;
+}
+
+/* Thank You Text */
+#thankYouMessage {
+    color: green;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contact-section {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h5 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.hidden {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: green;
+    font-we
