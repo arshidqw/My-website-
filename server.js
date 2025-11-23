@@ -1,50 +1,22 @@
-const express = require("express");
-const cors = require("cors");
-const fs = require("fs");
-const app = express();
-const PORT = process.env.PORT || 3000;
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-// Serve your frontend
-app.use(express.static("public"));
+    const result = await fetch("https://my-website--1-h9sg.onrender.com/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, message })
+    });
 
-// Serve home page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+    const data = await result.json();
+    alert(data.message);
 });
 
-// Save contact form messages
-app.post("/contact", (req, res) => {
-    const { name, email, message } = req.body;
 
-    const newMessage = {
-        name,
-        email,
-        message,
-        date: new Date()
-    };
 
-    // Save to JSON file (simple database)
-    const filePath = "./data/messages.json";
 
-    let messages = [];
-
-    if (fs.existsSync(filePath)) {
-        const data = fs.readFileSync(filePath);
-        messages = JSON.parse(data);
-    }
-
-    messages.push(newMessage);
-
-    fs.writeFileSync(filePath, JSON.stringify(messages, null, 2));
-
-    res.status(200).send({ success: true, message: "Message saved!" });
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
