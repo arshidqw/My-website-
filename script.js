@@ -1,3 +1,4 @@
+// SIGNUP FORM
 document.getElementById("signupForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -18,7 +19,7 @@ document.getElementById("signupForm").addEventListener("submit", async function 
     }
 
     try {
-        const response = await fetch("https://sjoe.onrender.com/contact", {
+        const response = await fetch("https://my-backend-sjoe.onrender.com/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -40,6 +41,45 @@ document.getElementById("signupForm").addEventListener("submit", async function 
     setTimeout(() => {
         thankYouMessage.classList.add("hidden");
     }, 3000);
+
+    this.reset();
+});
+
+
+
+// CONTACT FORM
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+    const successMessage = document.getElementById("successMessage");
+
+    if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    try {
+        const res = await fetch("https://my-backend-sjoe.onrender.com/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message })
+        });
+
+        const data = await res.json();
+        alert(data.message);
+
+    } catch (error) {
+        alert("Error sending message");
+    }
+
+    successMessage.classList.remove("hidden");
+
+    setTimeout(() => {
+        successMessage.classList.add("hidden");
+    }, 4000);
 
     this.reset();
 });
