@@ -1,4 +1,4 @@
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
+document.getElementById("signupForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -8,16 +8,15 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const thankYouMessage = document.getElementById("thankYouMessage");
 
     if (!name || !email || !password || !confirm) {
-        alert("Please complete all fields before submitting.");
+        alert("Please complete all fields.");
         return;
     }
 
     if (password !== confirm) {
-        alert("Passwords do not match!");
+        alert("Passwords do not match.");
         return;
     }
 
-    // SEND DATA TO BACKEND
     try {
         const response = await fetch("https://sjoe.onrender.com/contact", {
             method: "POST",
@@ -33,14 +32,14 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert(result.message);
 
     } catch (error) {
-        alert("Error sending data to server");
+        alert("Error sending data");
     }
 
-    // Show success message
-    thankYouMessage.style.display = "block";
-    this.reset();
+    thankYouMessage.classList.remove("hidden");
 
     setTimeout(() => {
-        thankYouMessage.style.display = "none";
+        thankYouMessage.classList.add("hidden");
     }, 3000);
+
+    this.reset();
 });
