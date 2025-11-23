@@ -1,22 +1,48 @@
-/* ================================
-   STUDY ANIMATED BACKGROUND
-   ================================ */
+/* GLOBAL BACKGROUND */
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: #eef4ff;  /* Soft study blue */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+
+  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
 }
 
-/* floating emojis/icons */
+/* HERO NAVIGATION */
+.hero-section {
+  background: #4ba3ff;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.menu a {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* FLOATING EMOJIS */
 .study-bg span {
-    position: fixed;
-    font-size: 40px;
-    opacity: 0.25;
-    animation: floatEdu 12s linear infinite;
+  position: fixed;
+  font-size: 40px;
+  opacity: 0.25;
+  animation: floatEdu 12s linear infinite;
 }
 
-/* Random positions + speed */
 .study-bg span:nth-child(1) { left: 10%; animation-duration: 13s; }
 .study-bg span:nth-child(2) { left: 30%; animation-duration: 10s; }
 .study-bg span:nth-child(3) { left: 50%; animation-duration: 15s; }
@@ -24,148 +50,152 @@ body {
 .study-bg span:nth-child(5) { left: 85%; animation-duration: 14s; }
 .study-bg span:nth-child(6) { left: 40%; animation-duration: 16s; }
 
-/* animation effect */
 @keyframes floatEdu {
-    0% { transform: translateY(110vh) rotate(0deg); }
-    100% { transform: translateY(-110vh) rotate(360deg); }
+  0% { transform: translateY(110vh) rotate(0deg); }
+  100% { transform: translateY(-110vh) rotate(360deg); }
 }
 
-/* Title */
+/* TITLE */
 h1 {
-    color: #8E2DE2;               /* beautiful purple gradient tone */
-    background: linear-gradient(45deg, #8E2DE2, #4A00E0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-align: center;           /* center on all devices */
-    font-size: 2.8em;             /* big title */
-    font-weight: 800;             /* bold + premium look */
-    letter-spacing: 2px;          /* spacing between letters */
-    margin: 20px 10px;
-    font-family: 'Poppins', sans-serif; /* stylish modern font */
+  font-size: 50px;
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(45deg, #8E2DE2, #4A00E0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Sub title */
-h2 {
-    color: darkblue;
+/* RIGHT-SIDE PANEL LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
 }
 
-/* Normal Text */
-p {
-    color: blue;
-    margin: 20px;
+/* These elements go to the right panel */
+.click-box,
+.info-link,
+.video-box,
+.section-title {
+  grid-column: 2;
 }
 
-/* Section */
-section {
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
+/* Left content auto arranged */
+.container > h1,
+.container > p:not(.info-link) {
+  grid-column: 1;
 }
 
-h3 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #4a90e2;
+/* Right panel element design */
+.click-box,
+.info-link,
+.video-box,
+.section-title {
+  background: rgba(255,255,255,0.95);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
-/* Form Container */
-.form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+/* Button */
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Form Inputs */
-.form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
+button:hover {
+  background: #0056b3;
 }
 
-.form-container input:focus {
-    border-color: #4a90e2;
-    outline: none;
+/* VIDEO */
+.video-box iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
 }
 
-/* Submit Button */
-.form-container button {
-    width: 100%;
-    padding: 10px;
-    background: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+/* FORMS */
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-.form-container button:hover {
-    background: #357ABD;
-}
-
-/* Thank You Text */
-#thankYouMessage {
-    color: green;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.contact-section {
-    max-width: 500px;
-    margin: 60px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h5 {
-    text-align: center;
-    margin-bottom: 20px;
+.section-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: deeppink;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+  text-align: center;
 }
 
 label {
-    margin-top: 10px;
-    display: block;
-    font-weight: bold;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 input,
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
 }
 
-button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 6px;
 }
 
-button:hover {
-    background: #0056b3;
+.btn:hover {
+  background: #0056b3;
 }
 
 .hidden {
-    display: none;
-    text-align: center;
-    margin-top: 15px;
-    color: green;
-    font-weight: bold;
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 880px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .click-box,
+  .info-link,
+  .video-box,
+  .section-title {
+    grid-column: 1;
+    background: rgba(255,255,255,0.8);
+  }
+  
+  /* Computer background image between nav and video */
+.computer-bg {
+  width: 100%;
+  height: 350px;   /* change to any height you want */
+  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');
+  background-size: contain;  /* keeps the computer image clean */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
