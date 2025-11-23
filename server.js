@@ -11,6 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 // Serve your frontend
 app.use(express.static("public"));
 
+// Serve home page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 // Save contact form messages
 app.post("/contact", (req, res) => {
     const { name, email, message } = req.body;
